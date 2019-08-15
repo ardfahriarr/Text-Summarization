@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel='stylesheet' href="{{url_for('static',filename='css/materialize.css')}}">
+  <link rel='stylesheet' href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><img src="static/r.png" height="62"></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">About</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="#">Navbar Link</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h1 class="header center orange-text">Ringkas.net</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">An Indonesian Text Summarizer</h5>
+            </div>
+          
+            <form action="/submit" method="POST">
+                <div class="input-field">
+                    <textarea id="textarea1" class="materialize-textarea" name="teks"></textarea>
+                    <label for="textarea1">Drop your text here....</label>
+                </div>
+
+                <div class="row">
+                    <div class="col s3"></div>
+                    <center>
+                        <div class="col s6">
+                            How many sentences of summary that you want :
+                            <div class="input-field inline">
+                                <input value="6" type="number" name="kluster">
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <div class="row center">
+                    <button value="1" name="submit" type="submit" class="btn-large waves-effect waves-light orange">summarize</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="static/js/materialize.min.js"></script>
